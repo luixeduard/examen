@@ -56,7 +56,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Container fluid="sm">
-          <h3>Iniciar sesión</h3>
+          <h3 className='text-light'>Iniciar sesión</h3>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Floating className="mb-3">
