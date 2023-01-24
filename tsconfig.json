@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "services/databaseService.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "services/databaseService.js", "context/AuthContext.js"],
   "exclude": ["node_modules"]
 }

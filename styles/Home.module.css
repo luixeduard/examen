@@ -3,9 +3,16 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 12rem;
+  min-height: 100vh;
+}
+
+.mainPL {
+  justify-content: space-between;
   padding: 6rem;
   min-height: 100vh;
 }
+
 
 .description {
   display: inherit;

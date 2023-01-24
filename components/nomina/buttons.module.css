@@ -1,0 +1,13 @@
+.btnWithImage{
+    min-width: 140px;
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    max-width: fit-content
+}
+
+.btnWithImage svg{
+    margin: 5px;
+    width: 30px;
+}

@@ -1,10 +1,10 @@
-import mysql from "mysql";
+import mysql from "mysql2/promise";
 
-const config = mysql.createPool({
+const DB = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "149215",
     database: "nominas"
 })
 
-export default config
+export default DB

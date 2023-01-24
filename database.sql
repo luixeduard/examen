@@ -2,13 +2,14 @@ create database nominas;
 create table empleados (
     empID int NOT NULL AUTO_INCREMENT,
     nombre varchar(70),
-    pLaboral int NOT null
+    apellido varchar(70),
+    pLaboral int NOT null,
     primary key (empID)
 );
 
 create table puesto (
     idPuesto int NOT NULL AUTO_INCREMENT,
-    descr varchar(255),
+    descr varchar(70),
     idTab int NOT NULL,
     primary key (idPuesto)
 );
@@ -26,7 +27,7 @@ create table tabulador (
 create table usuarios (
     id int NOT NULL AUTO_INCREMENT,
     email varchar(255),
-    pass varchar(255)
+    pass varchar(255),
     primary key (id)
 );
 
