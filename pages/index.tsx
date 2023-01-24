@@ -11,7 +11,7 @@ import { authConstants } from '@/context/Constants';
 export default function Home() {
 
   const [validated, setValidated] = useState(false);
-  const [state, dispatch] = useStore()
+  const [state, dispatch] = useStore();
 
   const handleSubmit = async (event: any) => {
     const form = event.currentTarget;
@@ -88,7 +88,7 @@ export default function Home() {
                 </Form.Control.Feedback>
               </Form.Floating>
             </Form.Group>
-            <Button type="submit">Iniciar sesión</Button>
+            <Button type="submit" variant='dark'>Iniciar sesión</Button>
           </Form>
         </Container>
       </main>

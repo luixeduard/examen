@@ -4,8 +4,6 @@ import { authConstants } from "./Constants";
 const Store = createContext();
 
 const reducer = (state, action) => {
-
-    console.log(action);
     
     switch (action.type) {
         case authConstants.LOGIN_REQUEST: {
@@ -21,9 +19,9 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 user: {
-                    ...action.payload,
+                    ...action.payload.user,
                     authenticating: false,
-                    authenticated: false
+                    authenticated: true
                 }
             }
         }
@@ -33,6 +31,8 @@ const reducer = (state, action) => {
                 user: {
                     ...state.user,
                     error: action.payload,
+                    authenticating: false,
+                    authenticated: false
                 }
             }
         }

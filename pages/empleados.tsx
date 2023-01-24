@@ -8,16 +8,12 @@ import { readAllPuestos } from "@/libs/puesto";
 import { GetServerSideProps } from "next";
 import { readAllEmpleados } from "@/libs/empleados";
 import { Empleado } from "@/types/Empleado";
-import { useStore } from "@/context/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute"
 
 export default function empleados({ puestos, empleados }: { puestos: Puesto[], empleados: Empleado[] }) {
 
-    const [state, dispatch] = useStore()
-
-    console.log({state})
-
     return (
-        <>
+        <ProtectedRoute>
             <Head>
                 <title>Examen</title>
                 <meta name="description" content="Zeetech"/>
@@ -28,7 +24,7 @@ export default function empleados({ puestos, empleados }: { puestos: Puesto[], e
                 <AgregarEmpleado puestos={puestos}/>
                 <TablaEmpleados empleados={empleados} puestos={puestos} />
             </main>
-        </>
+        </ProtectedRoute>
     )
 }
 

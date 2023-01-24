@@ -6,10 +6,11 @@ import TablaPuestos from "@/components/puestos/Tabla";
 import { GetServerSideProps } from "next";
 import { readAllPuestos } from "@/libs/puesto";
 import { Puesto } from "@/types/Puesto";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 export default function puesto({puestos}: {puestos: Puesto[]}) {
     return (
-        <>
+        <ProtectedRoute>
             <Head>
                 <title>Examen</title>
                 <meta name="description" content="Zeetech"/>
@@ -20,7 +21,7 @@ export default function puesto({puestos}: {puestos: Puesto[]}) {
                 <AgregarPuesto />
                 <TablaPuestos puestos={puestos} />
             </main>
-        </>
+        </ProtectedRoute>
     )
 }
 

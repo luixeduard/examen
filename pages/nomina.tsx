@@ -2,6 +2,7 @@ import NavbarComponent from "@/components/navbar";
 import ExportExcel from "@/components/nomina/ExportExcel";
 import ExportPDF from "@/components/nomina/ExportPDF";
 import TablaNomina from "@/components/nomina/Tabla";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import { readAllEmpleadosNomina } from "@/libs/empleados";
 import styles from '@/styles/Home.module.css'
 import { Empleado } from "@/types/Empleado";
@@ -14,7 +15,7 @@ export default function nomina({ empleados }: { empleados: Empleado[] }) {
     const tableRef = useRef(null);
     
     return (
-        <>
+        <ProtectedRoute>
             <Head>
                 <title>Examen</title>
                 <meta name="description" content="Zeetech"/>
@@ -30,7 +31,7 @@ export default function nomina({ empleados }: { empleados: Empleado[] }) {
                 </ButtonToolbar>
                 <TablaNomina empleados={empleados} tableRef={tableRef} />
             </main>
-        </>
+        </ProtectedRoute>
     )
 }
 

@@ -5,6 +5,13 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 
 export default NextAuth({
+    session: {
+        maxAge: 60 * 5,
+        updateAge: 60 * 10
+    },
+    jwt: {
+        maxAge: 60 * 5
+    },
     providers: [
         CredentialsProvider({
             async authorize(credentials, req) {
@@ -26,9 +33,6 @@ export default NextAuth({
     ],
     callbacks: {
         async session({ session, user }) {
-            const nDate = new Date();
-            nDate.setMinutes(nDate.getMinutes() + 5);
-            session.expires = nDate.toISOString();
             if (user && user.id) {
                 session.id = user.id
             }
